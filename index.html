@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es-tu un hmar Marouane ? mdr</title>
+    <style>
+        body {
+            background-color: rgb(157, 176, 254);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20%;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        #cheh {
+            display: none;
+            font-size: 50px;
+            color: rgb(46, 175, 44);
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .glitter {
+            color: rgba(46, 175, 44);
+            text-shadow: 0 0 5px rgb(46, 175, 44), 0 0 10px rgb(46, 175, 44), 0 0 20px rgb(46, 175, 44);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Es-tu un hmar Marouane ? mdr</h1>
+    <div id="buttons">
+        <button id="yesBtn">Oui</button>
+        <button id="noBtn">Non</button>
+    </div>
+    <h1 id="cheh"> A oe mm toi tu ldit
+
+    <script>
+        let noClickCount = 0;
+
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const cheh = document.getElementById("cheh");
+        const question = document.getElementById("question");
+        const buttons = document.getElementById("buttons");
+
+        yesBtn.addEventListener("click", () => {
+            question.style.display = "none";
+            buttons.style.display = "none";
+            cheh.style.display = "block";
+        });
+
+        noBtn.addEventListener("mouseover", () => {
+            if (noClickCount < 3) {
+                noBtn.style.position = "absolute";
+                noBtn.style.top = Math.random() * 80 + "%";
+                noBtn.style.left = Math.random() * 80 + "%";
+                noClickCount++;
+            } else {
+                noBtn.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
